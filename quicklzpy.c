@@ -438,7 +438,7 @@ static int myextension_clear(PyObject *m) {
 
 static struct PyModuleDef moduledef = {
         PyModuleDef_HEAD_INIT,
-        "quicklz",
+        "python_quicklz",
         "QuickLZ module",
         sizeof(struct module_state),
         QuicklzMethods,
@@ -451,7 +451,7 @@ static struct PyModuleDef moduledef = {
 #define INITERROR return NULL
 
 PyObject *
-PyInit_quicklz(void)
+PyInit_python_quicklz(void)
 #else
 
 #define INITERROR return
@@ -469,7 +469,7 @@ initquicklz(void)
 #if PY_MAJOR_VERSION >= 3
     PyObject *module = PyModule_Create(&moduledef);
 #else
-    PyObject *module = Py_InitModule("quicklz", QuicklzMethods);
+    PyObject *module = Py_InitModule("python_quicklz", QuicklzMethods);
 #endif
 
     if (module == NULL)

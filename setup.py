@@ -1,7 +1,7 @@
 from distutils.core import setup, Extension
 
 setup(
-    name = "quicklz",
+    name = "python_quicklz",
     version = "1.5.0",
     description="QuickLZ Bindings for Python",
     author='Sergey Dryabzhinsky',
@@ -9,21 +9,21 @@ setup(
     url='https://github.com/sergey-dryabzhinsky/python-quicklz',
     ext_modules = [
         Extension(
-            "quicklz",
+            "python_quicklz",
             ["quicklz.c", "quicklzpy.c"],
-            extra_compile_args=[
-               "-O2",
-               "-std=c99",
-               "-Wall",
-               "-W",
-               "-Wundef",
-#           try fortification
-#            "-DFORTIFY_SOURCE=2", "-fstack-protector",
-#           try hard CPU optimization
-#            "-march=native",
-#           try Graphite
-#            "-floop-interchange", "-floop-block", "-floop-strip-mine", "-ftree-loop-distribution",
-            ]
+#             extra_compile_args=[
+#                "-O2",
+#                "-std=c99",
+#                "-Wall",
+#                "-W",
+#                "-Wundef",
+# #           try fortification
+# #            "-DFORTIFY_SOURCE=2", "-fstack-protector",
+# #           try hard CPU optimization
+# #            "-march=native",
+# #           try Graphite
+# #            "-floop-interchange", "-floop-block", "-floop-strip-mine", "-ftree-loop-distribution",
+#             ]
         )
     ],
     classifiers=[
